@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>home</title>
+        <title>LOREM1</title>
       </Head>
       <div className="text-white flex h-[100vh]  items-center justify-center">
-        home
+        LOREM1
       </div>
     </>
   );

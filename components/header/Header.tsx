@@ -6,10 +6,18 @@ import Banner from "../animation/Banner";
 
 export default function Header() {
   const [isMenu, setIsMenu] = useState(false);
-  const menu = ["home", "about"];
+  const menu = [
+    { name: "LOREM IPSUM", url: "lorem1" },
+    { name: "LOREM IPSUM", url: "lorem2" },
+    { name: "LOREM IPSUM", url: "lorem3" },
+  ];
 
   return (
-    <header className="bg-black text-white fixed top-0 w-full z-50">
+    <header
+      className={`bg-black text-white fixed top-0 w-full z-50 ${
+        isMenu ? "h-full" : ""
+      }`}
+    >
       <div className="mx-auto py-4 items-center">
         <div className="flex items-center px-5">
           <Link href="/">
@@ -27,11 +35,11 @@ export default function Header() {
           <nav className="flex max-sm:hidden">
             {menu.map((item, index) => (
               <Link
-                href={`/${item}`}
+                href={`/${item.url}`}
                 className="px-2 text-[1rem] font-semibold w-full hover:text-gray-300 capitalize"
                 key={index}
               >
-                {item}
+                {item.name}
               </Link>
             ))}
           </nav>
@@ -50,13 +58,27 @@ export default function Header() {
             >
               {menu.map((item, index) => (
                 <Link
-                  href={`/${item}`}
-                  className="hover:text-gray-300 font-medium text-xl tracking-wide capitalize"
+                  href={`/${item.url}`}
+                  className="hover:text-gray-300 font-medium text-lg tracking-wide capitalize"
                   key={index}
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
+              <div className="flex justify-between gap-12">
+                <Link
+                  href="/loremipsum1"
+                  className="text-[#666666] font-bold text-lg tracking-wide uppercase"
+                >
+                  lorem ipsum
+                </Link>
+                <Link
+                  href="/loremipsum1"
+                  className="text-[#666666] font-bold text-lg tracking-wide uppercase"
+                >
+                  comming soon
+                </Link>
+              </div>
             </nav>
             <div className="fixed bottom-0 w-full">
               <Banner />
