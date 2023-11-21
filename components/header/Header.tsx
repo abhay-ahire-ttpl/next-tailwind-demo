@@ -32,17 +32,6 @@ export default function Header() {
           <p className="px-2 text-[1rem] font-semibold w-full ">
             {isMenu ? "Menu" : "Lorem"}
           </p>
-          <nav className="flex max-sm:hidden">
-            {menu.map((item, index) => (
-              <Link
-                href={`/${item.url}`}
-                className="px-2 text-[1rem] font-semibold w-full hover:text-gray-300 capitalize"
-                key={index}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
           <Image
             alt="menu-icon"
             className="sm:hidden"
